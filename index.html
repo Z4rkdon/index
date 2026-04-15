@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <title>Cadastro</title>
+    <style>
+        body{
+            background-color: rgb(91, 243, 111);
+        }
+        h1{
+            color: rgb(144, 43, 238);
+            text-align: center;
+            font-family: cursive;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,9 +24,19 @@
         <h1>Cadastro de Clientes</h1>
         <form>
             <label for="nome"> Nome:</label>
-            <input type="text" id="nome" required>
+            <input type="text" id="nome" placeholder="Guilherme" required class="input_text">
             <label for="cpf">CPF</label>
-            <input type="text" id="cpf" required>
+            <input type="text" id="cpf" placeholder="444.444.444-44" required class="input_text">
+            <label for="datadenascimento">Data de nascimento</label>
+            <input type="text" id="datadenascimento" placeholder="22/22/2222" required class="input_text">
+            <label for="e-mail">E-mail</label>
+            <input type="text" id="e-mail" placeholder="@gmail.com" required class="input_text">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" placeholder="(99) 9999-9999" required class="input_text">
+            
+                <!-- CEP, Rua, Número, Bairro, Cidade, Estado(UF), Senha-->
+
+            <input type="submit" value="Enviar Cadastro" class="btn_enviar">
         </form>
     </main>
     <footer>
