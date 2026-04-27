@@ -15,6 +15,21 @@
             font-family: cursive;
         }
     </style>
+    <script>
+        function pesquisarCEP(){
+            const link = "https://viacep.com.br/ws" + cop + "/json/?callback=preencherEndereco"
+            var script = document.createElement("script")
+            script.src = link
+            document.body.appendChild(script)
+
+        }
+        function preencherEndereco(){
+            alert(conteudo)
+            resposta.textContent = JSON.stringify(conteudo)
+
+        }
+
+    </script>
 </head>
 <body>
     <header>
@@ -39,7 +54,8 @@
             <input type="text" id="telefone" placeholder="(99) 9999-9999" required class="input_text">
 
             <label for="cep">CEP</label>
-            <input type="text" id="cep" placeholder="00000-000" required class="input_text">
+            <input type="text" id="cep" placeholder="00000-000" onblur="pesquisarCEP(this.value)" required class="input_text">
+            <p id="resposta"></p>
 
             <label for="número">Número</label>
             <input type="text" id="número" placeholder="190, 270, 183" required class="input_text">
