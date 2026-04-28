@@ -17,17 +17,20 @@
     </style>
     <script>
         function pesquisarCEP(){
-            const link = "https://viacep.com.br/ws" + cop + "/json/?callback=preencherEndereco"
+            const link = "https://viacep.com.br/ws/" + cop + "/json/?callback=preencherEndereco"
             var script = document.createElement("script")
             script.src = link
             document.body.appendChild(script)
 
         }
         function preencherEndereco(){
-            alert(conteudo)
-            resposta.textContent = JSON.stringify(conteudo)
+            document.getElementById("rua").value = conteudo.logradouro
+            document.getElementById("cidade").value = conteudo.localidade
+            document.getElementById("cep").value = conteudo.cep
 
         }
+
+
 
     </script>
 </head>
