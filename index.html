@@ -16,20 +16,40 @@
         }
     </style>
     <script>
-        function pesquisarCEP(){
+        function pesquisarCEP(cep){
+            resposta.textContent = ""
+            document.getElementById("rua").value = ""
+            document.getElementById("cidade").value = ""
+            document.getElementById("bairro").value = ""
+            document.getElementById("estado").value = ""
+            document.getElementById("nome").value = ""
+            document.getElementById("cpf").value = ""
+            document.getElementById("datadenascimento").value = ""
+            document.getElementById("e-mail").value = ""
+            document.getElementById("telefone").value = ""
+            document.getElementById("número").value = ""
+            document.getElementById("senha").value = ""
+
+            var validadecep = /^(0-9){8}$/;
+
+            if (validadecep.test(cep)){
             const link = "https://viacep.com.br/ws/" + cop + "/json/?callback=preencherEndereco"
             var script = document.createElement("script")
             script.src = link
             document.body.appendChild(script)
-
+            } else {
+                resposta.textContent = "CEP digitado incorretamente"
+                document.getElementById("cep").value = ""
+            }
         }
-        function preencherEndereco(){
+        
+       function preencherEndereco(conteudo){
+        if(!("erro" in conteudo))  {
             document.getElementById("rua").value = conteudo.logradouro
             document.getElementById("cidade").value = conteudo.localidade
-            document.getElementById("cep").value = conteudo.cep
-
+            document.getElementById("bairro").value = conteudo.bairro
         }
-
+       }
 
 
     </script>
@@ -84,7 +104,7 @@
             <input type="submit" value="Enviar Cadastro" class="btn_enviar">
         </form>
     </main>
-    <footer>
+    <footer>  
 
     </footer>
 </body>
