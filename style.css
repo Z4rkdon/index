@@ -1,36 +1,72 @@
-form label{
-    display: block;
-    font-size: 20px;
-    margin: 0 0 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.input_text{
-    display: black;
-    width: 50%;
-    margin: 0 0 5px;
-    padding: 10px 0;
-    
-}
-
-.btn_enviar{
-    width: 50%;
-    padding: 15PX 0;
-    background-color: rgb(91, 243, 111);
-    color: aliceblue;
-    font-weight: bold;
-    font-size: none;
-    border-radius: 5px;
-    transition: 1s all;
-    cursor: pointer;
-}
-
-.btn_enviar{
-    background-color: rgb(91, 243, 111); ;
-    transform: scale(1.1);
-}
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px;
+    background-color: #edf0f3;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+form {
+    width: 100%;
+    max-width: 400px; 
+    background: rgb(255, 249, 249);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(49, 48, 48, 0.05);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    font-size: 16px; 
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.input_text {
+    display: block; 
+    width: 100%;   
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border: 2px solid #d6d2d2;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    text-align: center;
+}
+
+.input_text:focus {
+    border-color: #39e04f; 
+}
+
+.btn_enviar {
+    width: 100%;
+    padding: 14px;
+    background-color: #00ac48; 
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.btn_enviar:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(28, 133, 72, 0.575);
+}
+
+.btn_enviar:active {
+    transform: scale(0.98);
+    
 }
