@@ -47,23 +47,7 @@ function preencherEndereco(conteudo) {
         document.getElementById("resposta").textContent = "CEP não encontrado.";
     }
 }
-function pegar_dados(){
-    const dados = {
-        nome: document.getElementById("nome").value,
-        cpf: document.getElementById("cpf").value,
-        datadenascimento: document.getElementById("datadenascimento").value,
-        email: document.getElementById("e-mail").value,
-        telefone: document.getElementById("telefone").value,
-        cep: document.getElementById("cep").value,
-        número: document.getElementById("número").value,
-        rua: document.getElementById("rua").value,
-        bairro: document.getElementById("bairro").value,
-        cidade: document.getElementById("cidade").value,
-        estado: document.getElementById("estado").value,
-        senha: document.getElementById("senha").value
-    }
-    return JSON.stringify(dados)
-}
+
 async function enviar_cadastro(){
     const dados = pegar_dados()
     try{
@@ -86,7 +70,7 @@ async function enviar_cadastro(){
     </header>
     <main>
         <h1>Cadastro de Clientes</h1>
-        <form>
+        <form id = "form_cadastro">
             <label for="nome"> Nome:</label>
             <input type="text" id="nome" placeholder="Guilherme, Richard, Pietro, Nycolas" required class="input_text">
 
@@ -127,11 +111,39 @@ async function enviar_cadastro(){
             
                 <!-- CEP, Rua, Número, Bairro, Cidade, Estado(UF), Senha-->
 
-            <input type="button" value="Enviar Cadastro" class="btn_enviar" onclick="enviar_cadastro()">
+            <input type="submit" id="btn_enviar" value="Enviar Cadastro" class="btn_enviar">
         </form>
     </main>
     <footer>  
 
     </footer>
+
+<script>
+function pegar_dados(){
+    const dados = {
+        nome: document.getElementById("nome").value,
+        cpf: document.getElementById("cpf").value,
+        email: document.getElementById("e-mail").value,
+        telefone: document.getElementById("telefone").value,
+        senha: document.getElementById("senha").value
+    }
+    return dados
+}
+
+const form_cadastro = document.getElementById("form_cadastro")
+const btn_enviar = document.getElementById("btn_enviar")
+form_cadastro,addEventListener("submit", async (event)=>{
+    event.preventDefault()
+    btn_enviar.disabled = true
+    btn_enviar.value = "Enviando Cadastro..."
+    const dados = pegarDados()
+    try{
+        const resposta= await fetch("http://localhost:3000/cadastrar"), {
+            method
+        }
+    }
+})
+</script>
+
 </body>
 </html>
